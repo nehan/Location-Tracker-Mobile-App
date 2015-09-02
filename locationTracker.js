@@ -21,8 +21,8 @@ function showLocation(pos) {
     };
 	alert("Current Location is  - "+current_location.latitude+"Long is "+current_location.longitude);
 	$(".location_alert").html(current_location.latitude+","+current_location.longitude);
-	//var destination="500 El Camino Real, Santa Clara, CA 95053";
-    //calculateDistance(current_location.latitude,current_location.longitude,destination);	
+	var destination="1050 Benton Street, Apt 3211 , Santa Clara, 95050";
+    calculateDistance(current_location.latitude,current_location.longitude,destination);	
 	watchPosition(pos);
 }
 function watchPosition(startPos)
@@ -32,8 +32,8 @@ function watchPosition(startPos)
 	alert("Start position is - "+position.coords.latitude+","+position.coords.longitude);
 	var dist=calculateDistance(startPos.coords.latitude, startPos.coords.longitude,position.coords.latitude, position.coords.longitude);
      $(".new_position").html(position.coords.latitude+","+ position.coords.longitude);					
-	//$("#travelled_distance").html(calculateDistance(startPos.coords.latitude, startPos.coords.longitude,
-                        //position.coords.latitude, position.coords.longitude));					
+	 $("#travelled_distance").html(calculateDistance(startPos.coords.latitude, startPos.coords.longitude,
+                        position.coords.latitude, position.coords.longitude));					
 });
 }
 
