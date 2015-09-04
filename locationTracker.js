@@ -26,11 +26,14 @@ geocoder.geocode( { 'address': destination_address}, function(results, status) {
 function watchUserLocation(destLat,destLong){
   navigator.geolocation.watchPosition(function(position) {
    dist=calculateDistance(destLat, destLong,position.coords.latitude, position.coords.longitude);
+   alert("calculated distance is  - "+dist);
   var str_prevDist = localStorage.getItem("prevDistant");
   prevDist = parseFloat(str_prevDist);
+  alert("previous distance is "+prevDist);
   if( prevDist == -1.0)
   {
-     localStorage.setItem("prevDistant", dist);    
+     localStorage.setItem("prevDistant", dist);  
+     alert("first time");	 
   }
    if(prevDist < 0.1 && dist >=0.1)
   {
