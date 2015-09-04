@@ -3,7 +3,7 @@ var dist;
 $(window).ready(function() {
 	
   init();
-  localStorage.setItem('prevDist', -1.0);
+  localStorage.setItem('prevDistant', -1.0);
 });
 
 function init(){
@@ -26,11 +26,11 @@ geocoder.geocode( { 'address': destination_address}, function(results, status) {
 function watchUserLocation(destLat,destLong){
   navigator.geolocation.watchPosition(function(position) {
    dist=calculateDistance(destLat, destLong,position.coords.latitude, position.coords.longitude);
-  var str_prevDist = localStorage.getItem("prevDist");
+  var str_prevDist = localStorage.getItem("prevDistant");
   prevDist = parseFloat(str_prevDist);
   if( prevDist == -1.0)
   {
-     localStorage.setItem("prevDist", dist);    
+     localStorage.setItem("prevDistant", dist);    
   }
    if(prevDist < 0.1 && dist >=0.1)
   {
@@ -40,7 +40,7 @@ function watchUserLocation(destLat,destLong){
   {
      alert("You are coming home - so turning on Air Freshner");  
   }
-  localStorage.setItem("prevDist", dist);
+  localStorage.setItem("prevDistant", dist);
  
    
   });
