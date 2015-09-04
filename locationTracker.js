@@ -32,7 +32,7 @@ function watchUserLocation(destLat,destLong){
   {
      localStorage.setItem("prevDist", dist);    
   }
-   if(prevDist < 0.5 && dist >=0.5)
+   if(prevDist < 0.1 && dist >=0.1)
   {
       alert("You are moving away - so turning off Air Freshner");  
   }
